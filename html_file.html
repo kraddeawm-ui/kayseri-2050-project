@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AON - Atmosfer Onarım Ağı</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="#" class="logo">🌍 AON</a>
+            <ul class="nav-links">
+                <li><a href="#home">Ana Sayfa</a></li>
+                <li><a href="#features">Özellikler</a></li>
+                <li><a href="#drones">Drone Filosu</a></li>
+                <li><a href="#pricing">Ücretlendirme</a></li>
+                <li><a href="#faq">SSS</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+<section id="home" class="hero" style="background-image: url('image1.png'); background-size: cover; background-position: center;">
+    <h1>🌍 Atmosfer Onarım Ağı</h1>
+    <p>
+        2050'de dünyayı temizleyen nano-teknoloji. Yapay zeka ve kuantum algoritmaları ile atmosferi
+        gerçek zamanlı olarak onarıyoruz.
+    </p>
+    <div class="hero-buttons">
+        <a href="#features" class="btn btn-primary">🚀 Keşfet</a>
+        <a href="#contact" class="btn btn-secondary">📞 İletişime Geç</a>
+    </div>
+</section>
+
+
+    <section class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-value" id="co2-cleaned">2.847.392</div>
+            <div class="stat-label">Ton CO₂ Temizlendi</div>
+            <div class="stat-trend">↗ +12.4% (Günlük)</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="active-drones">15.284</div>
+            <div class="stat-label">Aktif Nano-Drone</div>
+            <div class="stat-trend">↗ +3.7% (Haftalık)</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="efficiency">94.2%</div>
+            <div class="stat-label">Enerji Verimliliği</div>
+            <div class="stat-trend">↗ +0.8% (Aylık)</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="cities">847</div>
+            <div class="stat-label">Şehir Kapsamı</div>
+            <div class="stat-trend">↗ +15 (Bu Ay)</div>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <h2 class="section-title">🚀 Gelişmiş Özellikler</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3 class="feature-title">AI Optimizasyon</h3>
+                <p class="feature-description">Yapay zeka algoritmaları ile drone rotalarını ve enerji tüketimini gerçek zamanlı optimize eder.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔬</div>
+                <h3 class="feature-title">Nano Teknoloji</h3>
+                <p class="feature-description">Moleküler düzeyde CO₂ yakalayıp dönüştüren nano-drone teknolojisi ile maksimum verimlilik.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Kuantum Hesaplama</h3>
+                <p class="feature-description">Kuantum bilgisayarlar ile hava durumu tahminleri ve atmosferik optimizasyon modelleri.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔗</div>
+                <h3 class="feature-title">Blockchain Şeffaflık</h3>
+                <p class="feature-description">Tüm emisyon verileri ve temizleme raporları blockchain üzerinde şeffaf olarak saklanır.</p>
+            </div>
+        </div>
+    </section>
+    <section id="team" class="section">
+  <h2 class="section-title">👥 Takım Arkadaşlarımız</h2>
+
+  <div class="team-controls" style="max-width:1200px;margin:0 auto 1.5rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <input id="teamSearch" type="search" placeholder="İsim ile ara..." aria-label="Takımda isim ara" style="padding:.6rem .8rem;border-radius:8px;border:1px solid var(--border-color);background:var(--background-secondary);color:var(--text-primary);min-width:220px;">
+    <select id="teamFilter" aria-label="Rol filtrele" style="padding:.6rem .8rem;border-radius:8px;border:1px solid var(--border-color);background:var(--background-secondary);color:var(--text-primary);">
+      <option value="">Tüm Rolleri Göster</option>
+      <option value="lead">takım lideri atlas Baş Ajan</option>
+      <option value="engineer">2.Ajan</option>
+      <option value="research">3.Ajan</option>
+      <option value="design">4.KALİTESİZ AJAN</option>
+      <option value="ops">EH İŞTE YAPAY AJAN</option>
+    </select>
+  </div>
+
+  <div class="team-grid" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;">
+  </div>
+
+  <!-- Modal: profil detayları -->
+  <div id="teamModal" class="team-modal" aria-hidden="true" role="dialog" aria-labelledby="teamModalTitle" style="display:none;">
+    <div class="team-modal-backdrop"></div>
+    <div class="team-modal-panel" role="document" tabindex="-1">
+      <button class="team-modal-close" aria-label="Kapat">✕</button>
+      <div class="team-modal-body">
+        <img id="modalAvatar" alt="" loading="lazy">
+        <h3 id="teamModalTitle"></h3>
+        <p id="teamModalRole"></p>
+        <p id="teamModalBio"></p>
+        <div id="teamModalLinks"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section id="drones" class="section">
+        <h2 class="section-title">🚁 Drone Filosu</h2>
+        <div class="drone-stats">
+            <div class="stat-item">
+                <div class="stat-icon">🟢</div>
+                <div class="stat-info">
+                    <div class="stat-number">12.847</div>
+                    <div class="stat-text">Aktif Drone</div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">🟡</div>
+                <div class="stat-info">
+                    <div class="stat-number">1.892</div>
+                    <div class="stat-text">Bakımda</div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">🔴</div>
+                <div class="stat-info">
+                    <div class="stat-number">545</div>
+                    <div class="stat-text">Çevrimdışı</div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-info">
+                    <div class="stat-number">94.2%</div>
+                    <div class="stat-text">Ortalama Verim</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">🗺️ Küresel Drone Dağılımı</h3>
+            <div class="world-map" id="worldMap">
+                <div style="text-align: center; z-index: 10; position: relative;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">🌍</div>
+                    <div>Gerçek zamanlı drone pozisyonları</div>
+                </div>
+            </div>
+            <div class="map-legend">
+                <div class="legend-item"><span class="legend-dot active"></span> Aktif</div>
+                <div class="legend-item"><span class="legend-dot maintenance"></span> Bakımda</div>
+                <div class="legend-item"><span class="legend-dot offline"></span> Çevrimdışı</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section">
+        <h2 class="section-title">💰 Ücretlendirme Planları</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3 class="pricing-title">Başlangıç</h3>
+                <div class="pricing-price">₺22.999</div>
+                <div class="pricing-period">/ aylık</div>
+                <ul class="pricing-features">
+                    <li>50 Nano-Drone</li>
+                    <li>Temel AI Optimizasyon</li>
+                    <li>Aylık Raporlama</li>
+                    <li>Email Destek</li>
+                    <li>1 Şehir Kapsamı</li>
+                </ul>
+                <a href="#contact" class="btn btn-secondary">Başla</a>
+            </div>
+            <div class="pricing-card featured">
+                <h3 class="pricing-title">Profesyonel(ZAM GELCEK HEE BAK UYGUN VALLA )</h3>
+                <div class="pricing-price">500.000</div>
+                <div class="pricing-period">/ aylık</div>
+                <ul class="pricing-features">
+                    <li>500 Nano-Drone</li>
+                    <li>Gelişmiş AI Optimizasyon</li>
+                    <li>Gerçek Zamanlı Raporlama</li>
+                    <li>7/24 Destek</li>
+                    <li>5 Şehir Kapsamı</li>
+                    <li>Blockchain Entegrasyonu</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary">Seç</a>
+            </div>
+            <div class="pricing-card">
+                <h3 class="pricing-title">Kurumsal(YA VALLA ÇOOOOK EKONOMİK BEE) </h3>
+                <div class="pricing-price">₺199.999</div>
+                <div class="pricing-period">/ aylık</div>
+                <ul class="pricing-features">
+                    <li>Sınırsız Nano-Drone</li>
+                    <li>Kuantum AI Optimizasyon</li>
+                    <li>Özel Dashboard</li>
+                    <li>Özel Destek Ekibi</li>
+                    <li>Sınırsız Şehir Kapsamı</li>
+                    <li>API Erişimi</li>
+                    <li>Özel Entegrasyonlar</li>
+                </ul>
+                <a href="#contact" class="btn btn-secondary">İletişime Geç</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section">
+        <h2 class="section-title">❓ Sıkça Sorulan Sorular</h2>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                AON nasıl çalışır?
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                AON, nano-teknoloji kullanarak atmosferdeki CO₂'yi moleküler düzeyde yakalayıp dönüştürür. Yapay zeka algoritmaları ile drone rotaları optimize edilir ve kuantum hesaplama ile hava durumu tahminleri yapılır.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                Nano-drone'lar güvenli mi?
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Evet, nano-drone'larımız tamamen çevre dostu ve insan sağlığına zararsızdır. Biyobozunur malzemelerden üretilir ve sadece CO₂ moleküllerini hedefler.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                Kaç şehirde hizmet veriyorsunuz?
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Şu anda 847 şehirde aktif olarak hizmet veriyoruz. Her ay yeni şehirler eklemeye devam ediyoruz.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                Blockchain teknolojisini neden kullanıyorsunuz?
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Blockchain teknolojisi sayesinde tüm emisyon verileri ve temizleme raporları şeffaf ve değiştirilemez şekilde saklanır. Bu, müşterilerimize tam güvenilirlik sağlar.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                Enerji verimliliği ne kadar?
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                Sistemimiz %94.2 enerji verimliliği ile çalışır. Güneş enerjisi ve rüzgar enerjisi gibi yenilenebilir kaynaklardan beslenirken, kuantum optimizasyon ile enerji tüketimini minimize ederiz.
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">📞 Bize Ulaşın</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3 class="contact-title">E-posta</h3>
+                <p class="contact-info">info@aon-network.com</p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📞</div>
+                <h3 class="contact-title">Telefon</h3>
+                <p class="contact-info">+90 555 123 4567</p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3 class="contact-title">Adres</h3>
+                <p class="contact-info">İstanbul, Türkiye</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; text-align: center;">📝 İletişim Formu</h3>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Ad Soyad:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-posta:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Şirket:</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="plan">İlgilendiğiniz Plan:</label>
+                    <select id="plan" name="plan">
+                        <option value="">Plan Seçin</option>
+                        <option value="basic">Başlangıç (₺2.999/ay)</option>
+                        <option value="pro">Profesyonel (₺7.999/ay)</option>
+                        <option value="enterprise">Kurumsal (₺19.999/ay)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mesajınız:</label>
+                    <textarea id="message" name="message" placeholder="Lütfen ihtiyaçlarınızı detaylı bir şekilde açıklayın..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">📨 Mesaj Gönder</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>🌍 AON</h4>
+                <p>Atmosfer Onarım Ağı - Geleceğin temiz dünyası için bugünden çalışıyoruz. Nano-teknoloji, yapay zeka ve blockchain ile dünyayı daha yaşanabilir hale getiriyoruz.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Hızlı Erişim</h4>
+                <ul>
+                    <li><a href="#home">Ana Sayfa</a></li>
+                    <li><a href="#features">Özellikler</a></li>
+                    <li><a href="#drones">Drone Filosu</a></li>
+                    <li><a href="#pricing">Ücretlendirme</a></li>
+                    <li><a href="#faq">SSS</a></li>
+                    <li><a href="#contact">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Teknolojilerimiz</h4>
+                <ul>
+                    <li><a href="#features">🤖 AI Optimizasyon</a></li>
+                    <li><a href="#features">🔬 Nano Teknoloji</a></li>
+                    <li><a href="#features">⚡ Kuantum Hesaplama</a></li>
+                    <li><a href="#features">🔗 Blockchain</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>İletişim</h4>
+                <p>📧 info@aon-network.com</p>
+                <p>📞 +90 555 123 4567</p>
+                <p>📱 +90 555 987 6543</p>
+                <p>📍 Maslak Mahallesi, Teknoloji Vadisi<br>İstanbul, Türkiye 34485</p>
+                <div style="margin-top: 1rem;">
+                    <a href="#" style="color: var(--primary-color); margin-right: 1rem;">🔗 LinkedIn</a>
+                    <a href="#" style="color: var(--primary-color); margin-right: 1rem;">🐦 Twitter</a>
+                    <a href="#" style="color: var(--primary-color);">📺 YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2050 Atmosfer Onarım Ağı (AON). Tüm hakları saklıdır. | Gizlilik Politikası | Kullanım Şartları | Çerez Politikası</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
